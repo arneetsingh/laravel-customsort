@@ -74,7 +74,7 @@ If the priority no is higher than other posts, it will be moved to top in result
 Lets say we have 5 posts in our Post model.
 and we want to set them in order of ids - 2,4,1,5,3
 ```php
-Request: POST
+Request: PUT
 Endpoint: /posts/customSort
 Payload:
 {
@@ -124,6 +124,7 @@ Controller code could look like
     }
 
 ```
+<img src="https://i.imgur.com/9UMecVz.gif" />
 ### Frontend Tips
 I used [SortabelJS](https://github.com/SortableJS/Sortable) for having the ability to drag and drop to set manual order.
 And here is snippet to javascript code.
