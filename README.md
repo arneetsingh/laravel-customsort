@@ -125,6 +125,7 @@ Controller code could look like
 
 ```
 <img src="https://i.imgur.com/9UMecVz.gif" />
+
 ### Frontend Tips
 I used [SortabelJS](https://github.com/SortableJS/Sortable) for having the ability to drag and drop to set manual order.
 And here is snippet to javascript code.
