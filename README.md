@@ -32,7 +32,7 @@ php artisan vendor:publish --tag="laravel-customsort-config"
 ## Usage
 
 #### Model
-Use the `HasCustomSortTrait` trait in your model you want to have the ability of sorting manually.
+Use the `CanCustomSort` trait in your model you want to have the ability of sorting manually.
 ```php
 <?php
 
