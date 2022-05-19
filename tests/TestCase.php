@@ -1,26 +1,38 @@
 <?php
 
-namespace VendorName\Skeleton\Tests;
+namespace ArneetSingh\CustomSort\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 use Orchestra\Testbench\TestCase as Orchestra;
-use VendorName\Skeleton\SkeletonServiceProvider;
+use ArneetSingh\CustomSort\CustomSortServiceProvider;
 
 class TestCase extends Orchestra
 {
+    /**
+     * @throws \Exception
+     */
     protected function setUp(): void
     {
         parent::setUp();
+//        $this->loadMigrationsFrom(__DIR__.'/migrations');
 
-        Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'VendorName\\Skeleton\\Database\\Factories\\'.class_basename($modelName).'Factory'
-        );
+//        Factory::guessFactoryNamesUsing(
+//            function (string $modelName) {
+//                return 'ArneetSingh\\CustomSort\\Tests\\factories' . class_basename($modelName) . 'Factory';
+//            }
+//        );
+        Factory::guessModelNamesUsing(function ($factory) {
+            if (class_basename($factory) == 'PostFactory') {
+                return Post::class;
+            }
+        });
     }
 
     protected function getPackageProviders($app)
     {
         return [
-            SkeletonServiceProvider::class,
+            CustomSortServiceProvider::class,
         ];
     }
 
@@ -28,9 +40,12 @@ class TestCase extends Orchestra
     {
         config()->set('database.default', 'testing');
 
-        /*
-        $migration = include __DIR__.'/../database/migrations/create_skeleton_table.php.stub';
+
+        $migration = include __DIR__ . '/../database/migrations/create_custom_sorts_table.php.stub';
         $migration->up();
-        */
+
+        $migration = include __DIR__ . '/migrations/create_posts_table.php.stub';
+        $migration->up();
+
     }
 }

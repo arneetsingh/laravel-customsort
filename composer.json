@@ -1,17 +1,17 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "arneetsingh/laravel-customsort",
+    "description": "A package to manually sort records of a eloquent model in custom order",
     "keywords": [
-        ":vendor_name",
+        "arneetsingh",
         "laravel",
-        ":package_slug"
+        "laravel-customsort"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/arneetsingh/laravel-customsort",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Arneet Singh",
+            "email": "arneetsingh@gmail.com",
             "role": "Developer"
         }
     ],
@@ -22,31 +22,24 @@
     },
     "require-dev": {
         "nunomaduro/collision": "^6.0",
-        "nunomaduro/larastan": "^2.0.1",
         "orchestra/testbench": "^7.0",
-        "pestphp/pest": "^1.21",
-        "pestphp/pest-plugin-laravel": "^1.1",
-        "phpstan/extension-installer": "^1.1",
-        "phpstan/phpstan-deprecation-rules": "^1.0",
-        "phpstan/phpstan-phpunit": "^1.0",
         "phpunit/phpunit": "^9.5",
         "spatie/laravel-ray": "^1.26"
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories"
+            "ArneetSingh\\CustomSort\\": "src",
+            "ArneetSingh\\CustomSort\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests"
+            "ArneetSingh\\CustomSort\\Tests\\": "tests"
         }
     },
     "scripts": {
-        "analyse": "vendor/bin/phpstan analyse",
-        "test": "vendor/bin/pest",
-        "test-coverage": "vendor/bin/pest --coverage"
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage"
     },
     "config": {
         "sort-packages": true
@@ -54,10 +47,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "ArneetSingh\\CustomSort\\CustomSortServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
+                "CustomSort": "ArneetSingh\\CustomSort\\Facades\\CustomSort"
             }
         }
     },
