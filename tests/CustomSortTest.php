@@ -4,7 +4,6 @@ namespace ArneetSingh\CustomSort\Tests;
 
 use ArneetSingh\CustomSort\Models\CustomSort;
 use Illuminate\Foundation\Testing\LazilyRefreshDatabase;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class CustomSortTest extends TestCase
 {
@@ -21,7 +20,7 @@ class CustomSortTest extends TestCase
     }
 
     /** @test */
-    function orderByCustomTest()
+    public function orderByCustomTest()
     {
         $posts = Post::factory()->count(5)->create();
 
@@ -35,7 +34,7 @@ class CustomSortTest extends TestCase
     }
 
     /** @test */
-    function setPriorityTest()
+    public function setPriorityTest()
     {
         $posts = Post::factory()->count(5)->create();
 

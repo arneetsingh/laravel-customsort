@@ -1,4 +1,5 @@
 <?php
+
 namespace ArneetSingh\CustomSort\Tests\factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;

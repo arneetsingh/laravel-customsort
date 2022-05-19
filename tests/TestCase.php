@@ -2,10 +2,9 @@
 
 namespace ArneetSingh\CustomSort\Tests;
 
-use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Str;
-use Orchestra\Testbench\TestCase as Orchestra;
 use ArneetSingh\CustomSort\CustomSortServiceProvider;
+use Illuminate\Database\Eloquent\Factories\Factory;
+use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
 {
@@ -46,6 +45,5 @@ class TestCase extends Orchestra
 
         $migration = include __DIR__ . '/migrations/create_posts_table.php.stub';
         $migration->up();
-
     }
 }

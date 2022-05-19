@@ -2,7 +2,6 @@
 
 namespace ArneetSingh\CustomSort\Traits;
 
-
 use ArneetSingh\CustomSort\Models\CustomSort;
 
 trait CanCustomSort
@@ -49,7 +48,7 @@ trait CanCustomSort
     public static function setNewOrder(array $arrayIds)
     {
         // get the morphclass name from Relation::morphMap
-        $morphClass = (new self)->customSort()->getMorphClass();
+        $morphClass = (new self())->customSort()->getMorphClass();
         // delete all entries for this type of model
         CustomSort::where('sortable_type', $morphClass)->delete();
         // insert custom sort records
@@ -57,7 +56,7 @@ trait CanCustomSort
             CustomSort::create([
                 'sortable_id' => $item,
                 'sortable_type' => $morphClass,
-                'priority' => count($arrayIds) - $key
+                'priority' => count($arrayIds) - $key,
             ]);
         });
     }
@@ -65,13 +64,13 @@ trait CanCustomSort
     public function setOrderPriority($priority)
     {
         // get the morphclass name from Relation::morphMap
-        $morphClass = (new self)->customSort()->getMorphClass();
+        $morphClass = (new self())->customSort()->getMorphClass();
 
         CustomSort::updateOrCreate([
             'sortable_id' => $this->id,
             'sortable_type' => $morphClass,
         ], [
-            'priority' => $priority
+            'priority' => $priority,
         ]);
     }
 }

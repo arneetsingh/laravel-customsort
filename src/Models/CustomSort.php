@@ -6,7 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class CustomSort extends Model
 {
-    protected $guarded  = [];
+    protected $guarded = [];
+
     /**
      * Get all of the owning sortable models.
      */

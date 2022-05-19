@@ -2,9 +2,9 @@
 
 namespace ArneetSingh\CustomSort;
 
+use ArneetSingh\CustomSort\Commands\CustomSortCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use ArneetSingh\CustomSort\Commands\CustomSortCommand;
 
 class CustomSortServiceProvider extends PackageServiceProvider
 {
