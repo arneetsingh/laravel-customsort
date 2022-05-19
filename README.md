@@ -1,4 +1,4 @@
-# A package to manually sort records of a eloquent model in custom order
+# Manually sort records of a eloquent model in custom order
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/arneetsingh/laravel-customsort.svg?style=flat-square)](https://packagist.org/packages/arneetsingh/laravel-customsort)
 [![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/arneetsingh/laravel-customsort/run-tests?label=tests)](https://github.com/arneetsingh/laravel-customsort/actions?query=workflow%3Arun-tests+branch%3Amain)
